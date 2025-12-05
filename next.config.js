@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  // output: 'standalone', // Commenté pour le développement local
+  // Activer standalone uniquement en production (pour Railway)
+  ...(process.env.NODE_ENV === 'production' && { output: 'standalone' }),
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
 }
 
