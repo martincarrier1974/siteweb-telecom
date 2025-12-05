@@ -61,19 +61,23 @@ export default function QuestionnairePage() {
 
   // Charger depuis localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('questionnaire-answers')
-    if (saved) {
-      try {
-        setAnswers(JSON.parse(saved))
-      } catch (e) {
-        console.error('Error loading saved answers', e)
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('questionnaire-answers')
+      if (saved) {
+        try {
+          setAnswers(JSON.parse(saved))
+        } catch (e) {
+          console.error('Error loading saved answers', e)
+        }
       }
     }
   }, [])
 
   // Sauvegarder dans localStorage
   useEffect(() => {
-    localStorage.setItem('questionnaire-answers', JSON.stringify(answers))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('questionnaire-answers', JSON.stringify(answers))
+    }
   }, [answers])
 
   const updateAnswer = (updates: Partial<typeof answers>) => {

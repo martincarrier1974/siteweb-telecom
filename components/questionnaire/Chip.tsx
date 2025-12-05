@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface ChipProps {
   children: React.ReactNode
   selected?: boolean

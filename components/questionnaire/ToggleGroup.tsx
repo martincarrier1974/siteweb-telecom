@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface ToggleGroupProps {
   options: Array<{ value: string; label: string; description?: string }>
   value: string[]
