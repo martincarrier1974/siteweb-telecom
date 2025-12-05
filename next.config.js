@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  output: 'standalone',
+  // output: 'standalone', // Commenté pour le développement local
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
 }
 
