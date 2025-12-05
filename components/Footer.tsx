@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
+import Logo from './Logo'
 
 export default function Footer() {
   return (
@@ -7,7 +8,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-primary mb-4">Telecom</h3>
+            <div className="mb-4">
+              <Logo className="h-10 w-auto" />
+            </div>
             <p className="text-gray-400">
               Votre partenaire de confiance pour tous vos besoins en télécommunications.
             </p>
