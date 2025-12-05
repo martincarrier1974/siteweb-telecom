@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FiWifi, FiPhone, FiShield, FiHeadphones } from 'react-icons/fi'
 
 const features = [
@@ -42,6 +43,11 @@ export default function Features() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link href="/questionnaire" className="btn-primary text-lg px-8 py-4">
+            Demande de soumission
+          </Link>
         </div>
       </div>
     </section>
