@@ -8,7 +8,7 @@ export default function CTA() {
           Prêt à commencer ?
         </h2>
         <p className="text-xl mb-8 text-white/90">
-          Contactez-nous dès aujourd'hui pour découvrir nos solutions
+          Contactez-nous dès aujourd&apos;hui pour découvrir nos solutions
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/products" className="btn-secondary bg-white text-primary hover:bg-gray-100">
