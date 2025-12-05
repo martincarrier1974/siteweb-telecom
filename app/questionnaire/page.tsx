@@ -8,6 +8,7 @@ import Switch from '@/components/questionnaire/Switch'
 import ToggleGroup from '@/components/questionnaire/ToggleGroup'
 import CheckboxGroup from '@/components/questionnaire/CheckboxGroup'
 import Chip from '@/components/questionnaire/Chip'
+import PhoneGallery from '@/components/questionnaire/PhoneGallery'
 
 // Prix des téléphones (valeurs simplifiées - à adapter selon vos besoins)
 const PHONE_2135_MONTHLY_RENTAL = 15.00
@@ -25,6 +26,7 @@ const PHONE_HT801_PURCHASE_PRICE = 80.00
 
 export default function QuestionnairePage() {
   const [currentStep, setCurrentStep] = useState(0)
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const [answers, setAnswers] = useState({
     totalUsers: 1,
     phone2135: 0,
@@ -109,7 +111,7 @@ export default function QuestionnairePage() {
               label="Nombre total d'utilisateurs"
             />
             <button
-              onClick={() => {/* TODO: Ouvrir galerie de téléphones */}}
+              onClick={() => setIsGalleryOpen(true)}
               className="flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
             >
               <FiImage className="w-5 h-5" />
@@ -453,6 +455,8 @@ export default function QuestionnairePage() {
           </div>
         </div>
       </div>
+      
+      <PhoneGallery isOpen={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} />
     </div>
   )
 }
