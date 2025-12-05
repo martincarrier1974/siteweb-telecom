@@ -11,10 +11,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-md sticky top-0 z-40">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center pt-6">
+          <Link href="/" className="flex items-center pt-6 relative z-10">
             <Logo className="h-12 w-auto" />
           </Link>
 
