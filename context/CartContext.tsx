@@ -27,15 +27,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Charger le panier depuis localStorage au montage
   useEffect(() => {
-    const savedCart = localStorage.getItem('cart')
-    if (savedCart) {
-      setItems(JSON.parse(savedCart))
+    if (typeof window !== 'undefined') {
+      const savedCart = localStorage.getItem('cart')
+      if (savedCart) {
+        try {
+          setItems(JSON.parse(savedCart))
+        } catch (e) {
+          console.error('Error loading cart from localStorage', e)
+        }
+      }
     }
   }, [])
 
   // Sauvegarder le panier dans localStorage à chaque changement
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(items))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cart', JSON.stringify(items))
+    }
   }, [items])
 
   const addItem = (item: Omit<CartItem, 'quantity'>) => {
