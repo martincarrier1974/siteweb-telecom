@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { FiUsers, FiPhone, FiGlobe, FiArchive, FiBuilding, FiSettings, FiTarget, FiImage } from 'react-icons/fi'
 import NumberInput from '@/components/questionnaire/NumberInput'
 import Switch from '@/components/questionnaire/Switch'
@@ -25,6 +26,7 @@ const PHONE_T48U_PURCHASE_PRICE = 220.00
 const PHONE_HT801_PURCHASE_PRICE = 80.00
 
 export default function QuestionnairePage() {
+  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(0)
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const [answers, setAnswers] = useState({
@@ -391,15 +393,24 @@ export default function QuestionnairePage() {
   const handleNext = () => {
     if (currentStep < questions.length - 1) {
       setCurrentStep(currentStep + 1)
+      // Scroll to top when changing steps
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       // Soumettre le formulaire
       alert('Questionnaire soumis avec succès! Vos réponses ont été enregistrées.')
+      // Optionnel: rediriger vers une page de confirmation
+      // router.push('/questionnaire/confirmation')
     }
   }
 
   const handlePrevious = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1)
+      // Scroll to top when changing steps
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      // Si on est à la première étape, retourner à l'accueil
+      router.push('/')
     }
   }
 
@@ -432,13 +443,18 @@ export default function QuestionnairePage() {
             {currentStepData.component}
 
             <div className="flex justify-between pt-6 border-t mt-8">
-              <button
-                onClick={handlePrevious}
-                disabled={currentStep === 0}
-                className="btn-outline disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {currentStep === 0 ? 'Retour' : 'Précédent'}
-              </button>
+              {currentStep === 0 ? (
+                <Link href="/" className="btn-outline">
+                  Retour
+                </Link>
+              ) : (
+                <button
+                  onClick={handlePrevious}
+                  className="btn-outline"
+                >
+                  Précédent
+                </button>
+              )}
               
               <div className="flex items-center space-x-4">
                 <span className="text-sm text-gray-500">
