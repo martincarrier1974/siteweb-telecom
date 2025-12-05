@@ -5,6 +5,7 @@ const nextConfig = {
     domains: ['localhost'],
   },
   output: 'standalone',
+  allowedDevOrigins: ['127.0.0.1', 'localhost'],
 }
 
 module.exports = nextConfig
