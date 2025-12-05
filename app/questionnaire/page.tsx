@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { FiUsers, FiPhone, FiGlobe, FiArchive, FiBuilding, FiSettings, FiTarget, FiImage } from 'react-icons/fi'
+import { FiUsers, FiPhone, FiGlobe, FiArchive, FiBriefcase, FiSettings, FiTarget, FiImage } from 'react-icons/fi'
 import NumberInput from '@/components/questionnaire/NumberInput'
 import Switch from '@/components/questionnaire/Switch'
 import ToggleGroup from '@/components/questionnaire/ToggleGroup'
@@ -300,7 +300,7 @@ export default function QuestionnairePage() {
     },
     {
       id: 'callcenter',
-      icon: <FiBuilding className="w-8 h-8 text-primary" />,
+      icon: <FiBriefcase className="w-8 h-8 text-primary" />,
       title: 'Centre d\'appels',
       description: 'Avez-vous besoin d\'un centre d\'appels ?',
       component: (
