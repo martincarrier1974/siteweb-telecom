@@ -6,7 +6,7 @@
     "dev": "next dev -p 3000",
     "dev:clean": "powershell -ExecutionPolicy Bypass -File ./start-dev.ps1",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-3000}",
     "lint": "next lint",
     "clean": "Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue"
   },

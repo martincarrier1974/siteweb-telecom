@@ -13,8 +13,8 @@ const nextConfig = {
       },
     ],
   },
-  // Désactiver standalone pour Railway - utiliser next start normalement
-  // ...(process.env.NODE_ENV === 'production' && { output: 'standalone' }),
+  // Configuration pour Railway
+  ...(process.env.NODE_ENV === 'production' && { output: 'standalone' }),
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
 }
 
