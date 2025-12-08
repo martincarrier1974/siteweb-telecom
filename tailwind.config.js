@@ -21,12 +21,20 @@ module.exports = {
           DEFAULT: '#FFFFFF',
           light: '#F5F5F5',
         },
+        gray: {
+          DEFAULT: '#6B7280',
+          light: '#9CA3AF',
+          dark: '#374151',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
       },
     },
   },
   plugins: [],
 }
-

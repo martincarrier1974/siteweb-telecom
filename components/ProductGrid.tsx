@@ -49,11 +49,16 @@ const products = [
 
 export default function ProductGrid() {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-secondary text-center mb-12">
-          Nos Produits
-        </h2>
+    <section className="section-padding bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="heading-2">
+            Nos Produits
+          </h2>
+          <p className="text-body max-w-2xl mx-auto">
+            Découvrez notre gamme complète de solutions télécom adaptées à vos besoins.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -63,4 +68,3 @@ export default function ProductGrid() {
     </section>
   )
 }
-

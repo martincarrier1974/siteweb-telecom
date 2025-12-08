@@ -10,6 +10,7 @@ export default function Logo({ className = '' }: { className?: string }) {
         height={50}
         priority
         className="h-auto w-auto"
+        style={{ backgroundColor: 'transparent' }}
       />
     </div>
   )

@@ -26,19 +26,26 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-16 bg-accent-light">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-secondary text-center mb-12">
-          Pourquoi nous choisir ?
-        </h2>
+    <section className="section-padding bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="heading-2">
+            Pourquoi nous choisir ?
+          </h2>
+          <p className="text-body max-w-2xl mx-auto">
+            Des solutions fiables, un service exceptionnel et un support technique dédié à votre réussite.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="card text-center">
-              <feature.icon className="text-5xl text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-secondary mb-3">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <feature.icon className="text-4xl text-primary" />
+              </div>
+              <h3 className="heading-3 text-xl mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-body text-sm">
                 {feature.description}
               </p>
             </div>
@@ -53,4 +60,3 @@ export default function Features() {
     </section>
   )
 }
-
