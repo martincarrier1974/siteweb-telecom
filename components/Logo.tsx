@@ -2,7 +2,13 @@ import Image from 'next/image'
 
 export default function Logo({ className = '' }: { className?: string }) {
   return (
-    <div className={`flex items-center ${className}`}>
+    <div 
+      className={`flex items-center logo-transparent ${className}`}
+      style={{ 
+        backgroundColor: 'transparent',
+        background: 'transparent'
+      }}
+    >
       <Image
         src="/logo.png"
         alt="bz Télécom"
@@ -10,6 +16,11 @@ export default function Logo({ className = '' }: { className?: string }) {
         height={50}
         priority
         className="h-auto w-auto"
+        style={{ 
+          backgroundColor: 'transparent',
+          background: 'transparent',
+          mixBlendMode: 'normal'
+        }}
       />
     </div>
   )

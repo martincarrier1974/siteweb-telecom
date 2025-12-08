@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
+    "dev:clean": "powershell -ExecutionPolicy Bypass -File ./start-dev.ps1",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue"
   },
   "dependencies": {
     "next": "14.2.33",
